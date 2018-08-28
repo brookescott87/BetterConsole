@@ -366,7 +366,7 @@ public:
 
 	static const char * GetReferenceName(TESObjectREFR * pRef)
 	{
-		return pRef->GetReferenceName();
+		return CALL_MEMBER_FN(pRef, GetReferenceName)();
 	}
 
 	static void InitHook()
@@ -390,7 +390,7 @@ public:
 		{
 			GFxValue dispatchEvent;
 			GFxValue eventArgs[3];
-			IMenu * pConsole = (*g_ui)->GetMenu(&console);
+			IMenu * pConsole = (*g_ui)->GetMenu(console);
 			auto * movieRoot = pConsole->movie->movieRoot;
 			movieRoot->CreateString(&eventArgs[0], "OnConsoleOpen");
 			eventArgs[1].SetBool(true);

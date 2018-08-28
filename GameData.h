@@ -206,7 +206,11 @@ public:
 	UInt32												casterHandle;							// 38
 	NiNode												* niNode;								// 40  NiNode
 	MagicItem											* item;									// 48
+#if DEBUG
 	MagicItem::EffectItem								* effect;								// 50  effectsettings???????????
+#else
+	void                                                * effect;
+#endif
 	TESObjectREFR										* reference;							// 58  -0x110 MagicTarget; DYNAMIC_CAST
 	UInt64												unk68;									// 60
 	UInt64												unk70;									// 68
