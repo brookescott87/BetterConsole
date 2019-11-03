@@ -260,7 +260,7 @@ inline void RegisterString(GFxValue * dst, GFxMovieRoot * view, const char * nam
 	dst->SetMember(name, &fxValue);
 }
 
-
+#ifdef BORKED
 void BetterConsole_GetBaseData::Invoke(Args * args)
 {
 	TESObjectREFR* pRef = nullptr;
@@ -1255,6 +1255,7 @@ void	CollectEquipmentData	(GFxValue& object, GFxMovieRoot * root, Actor * actor,
 		}
 	}
 }
+#endif
 
 #ifdef DEBUG
 	UInt32 * value = reinterpret_cast<UInt32*>((uintptr_t)(pObjectExtraInstance->data->forms) + pObjectExtraInstance->data->blockSize);
@@ -1284,7 +1285,6 @@ void	CollectEquipmentData	(GFxValue& object, GFxMovieRoot * root, Actor * actor,
 			}
 		}
 	}
-#endif
 
 
 #ifdef DEBUG
@@ -2086,5 +2086,5 @@ void BetterConsole_GetExtraData::Invoke(Args * args)
 	}
 }
 
-
+#endif
 
